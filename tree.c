@@ -81,7 +81,7 @@ void build_trunk(int size)
 
 void tree(int size)
 {
-    if (size == 0)
+    if (size <= 0)
         return;
     build_floor(size);
     build_trunk(size);
