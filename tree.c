@@ -44,23 +44,21 @@ void print_n_char(char c, int n)
 
 void build_floor(int size)
 {
-    int i = 0;
-    int j = 0;
     int n_ligne = 4;
     int n_char = 1;
+    int rem = 4;
 
-    while (i != size) {
-        while (j != n_ligne) {
+    for (int i = 0; i != size; i++) {
+        for (int j = 0; j != n_ligne; j++) {
             print_spaces(size, n_char);
             print_n_char('*', n_char);
             my_putchar('\n');
             n_char = n_char + 2;
-            j++;
         }
         n_ligne++;
-        j = 0;
-        n_char = n_char - 4;
-        i++;
+        n_char = n_char - rem;
+        if ( i % 2 == 1)
+            rem = rem + 2;
     }
 }
 
